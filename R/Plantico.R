@@ -82,7 +82,7 @@ Graficadebarratiempo_t <- function(DatosTabla, t){
 
 # Con esta funcion solo es necesario pasar los datos de la tabla, y el tiempo hasta el cual se quiere
 # graficar las lineas sombreadas con su desvio estandar.
-grafico_lineas_tiempo_t<- function(datos, t){
+Grafico_lineas_tiempo_t<- function(datos, t){
   data <- as.data.frame(datos[datos$Tiempo <=t,])
   
   medias_y_desvios <- aggregate(. ~ Tratamiento + Tiempo, data, function(x) c(media = mean(x), desvio = sd(x)))
