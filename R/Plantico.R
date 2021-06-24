@@ -5,7 +5,7 @@
 #' @examples
 #' Para instalar y hacer uso del paquete se debe contar con
 #' require(devtools)
-#' install_github("kbqt14/PaquetePlantico")
+#' install_github("kbqt14/Plantico")
 #'require(dplyr)
 #'Los datos a importar deben estar contenidos en un excel deben tener los siguientes titulos organizados en columnas Tratamiento	Tiempo	Longitud y se lo debe llamar "DatosTabla", Se debe comprobar que el archivo está abierto en la sección de Environment en RStudio. Algunas formas de ayuda para localizar los archivos son la función file.choose()
 #'Un ejemplo de importar el excel en la consola es el siguiente DatosTabla <- read_excel("Aquisedebeutilizarfile.choose()parasaberlaruta/DatosTabla.xlsx",col_types = c("text","text","numeric"))
