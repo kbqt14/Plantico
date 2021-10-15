@@ -38,11 +38,24 @@ Resumentiempo_t <- function(datos, t){
   ResumenTiempo_t
 }
 
-
-# Tabla_t_A se le pasan los datos y el tiempo del cual se quiere generar un boxplot y un ANOVA 
+# Tabla_t_A se le pasan los datos y el tiempo del cual se quiere generar un boxplot y un test Tukey 
 # en el tiempo deseado
 
 Tabla_t_A <- function(DatosTabla, t){
+  Tiempo_t<- filter(DatosTabla, Tiempo== as.character(t))
+  ResumenTiempo_t<- describeBy(Tiempo_t$Longitud,Tiempo_t$Tratamiento)
+  ResumenTiempo_t
+  boxplot(Longitud~Tratamiento, data=Tiempo_t, main = paste("Tiempo", t), 
+          col = c(2,3,4))
+  AnovaTiempo_t<- aov(Longitud~Tratamiento, data=Tiempo_t)
+  summary(AnovaTiempo_t)
+}
+
+
+# Tabla_tukey_A se le pasan los datos y el tiempo del cual se quiere generar un boxplot y un test Tukey 
+# en el tiempo deseado
+
+Tabla_tukey_A <- function(DatosTabla, t){
   Tiempo_t<- filter(DatosTabla, Tiempo== as.character(t))
   ResumenTiempo_t<- describeBy(Tiempo_t$Longitud,Tiempo_t$Tratamiento)
   ResumenTiempo_t
